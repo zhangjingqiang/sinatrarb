@@ -1,0 +1,47 @@
+<div class="block notice">
+  <h4>Search</h4>
+  <p>
+    <form action="/search">
+      <input type="text" name="s" placeholder="Search" value="<%= params[:s] %>">
+      <span class="description">Ex: partial</span>
+    </form>
+  </p>
+</div>
+<div class="block">
+  <h3>Switch Theme</h3>
+  <ul class="navigation">
+    <li><a href="#" onclick="Theme.activate('default'); return false;">Default</a></li>
+    <li><a href="#" onclick="Theme.activate('activo'); return false;">Activo 2</a></li>
+    <li><a href="#" onclick="Theme.activate('red'); return false;">Red</a></li>
+    <li><a href="#" onclick="Theme.activate('amro'); return false;">Amro</a></li>
+    <li><a href="#" onclick="Theme.activate('bec'); return false;">Bec</a></li>
+    <li><a href="#" onclick="Theme.activate('bec-green'); return false;">Bec-Green</a></li>
+    <li><a href="#" onclick="Theme.activate('blue'); return false;">Blue</a></li>
+    <li><a href="#" onclick="Theme.activate('djime-cerulean'); return false;">Djime-Cerulean</a></li>
+    <li><a href="#" onclick="Theme.activate('drastic-dark'); return false;">Drastic Dark</a></li>
+    <li><a href="#" onclick="Theme.activate('kathleene'); return false;">Kathleene</a></li>
+    <li><a href="#" onclick="Theme.activate('olive'); return false;">Olive</a></li>
+    <li><a href="#" onclick="Theme.activate('orange'); return false;">Orange</a></li>
+    <li><a href="#" onclick="Theme.activate('reidb-greenish'); return false;">Greenish</a></li>
+    <li><a href="#" onclick="Theme.activate('warehouse'); return false;">Warehouse</a></li>
+  </ul>
+</div>
+<div class="block">
+  <h3>Social Advertisement</h3>
+  <ul class="navigation">
+    <li><a href="<%= ENV['TWITTER'] %>">Twitter</a></li>
+    <li><a href="<%= ENV['FACEBOOK'] %>">Facebook</a></li>
+    <li><a href="<%= ENV['GOOGLE_PLUS'] %>">Google+</a></li>
+  </ul>
+</div>
+<div class="block">
+  <div class="sidebar-block">
+    <h4>About this site</h4>
+    <p>
+      Made by <a href="<%= ENV['ABOUT_ME'] %>">zhangjingqiang</a><br>
+      Based on <a href="http://pilu.github.com/web-app-theme">Web App Theme</a><br>
+      Hosted on <a href="http://www.heroku.com">Heroku</a><br>
+      Powered by <a href="http://www.sinatrarb.com">Sinatra</a>
+    </p>
+  </div>
+</div>

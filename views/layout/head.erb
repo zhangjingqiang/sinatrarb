@@ -1,0 +1,52 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sinatra</title>
+<link rel="stylesheet" href="stylesheets/base.css" type="text/css" media="screen" />
+<link rel="stylesheet" id="current-theme" href="stylesheets/themes/default/style.css" type="text/css" media="screen" />
+<script type="text/javascript" charset="utf-8" src="javascripts/jquery-1.3.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="javascripts/jquery.scrollTo.js"></script>
+<script type="text/javascript" charset="utf-8" src="javascripts/jquery.localscroll.js"></script>
+<script type="text/javascript" charset="utf-8">
+  // <![CDATA[
+  var Theme = {
+    activate: function(name) {
+      window.location.hash = 'themes/' + name
+      Theme.loadCurrent();
+    },
+
+    loadCurrent: function() {
+      var hash = window.location.hash;
+      if (hash.length > 0) {
+        matches = hash.match(/^#themes\/([a-z0-9\-_]+)$/);
+        if (matches && matches.length > 1) {
+          $('#current-theme').attr('href', 'stylesheets/themes/' + matches[1] + '/style.css');
+        } else {
+          alert('theme not valid');
+        }
+      }
+    }
+  }
+
+  $(document).ready(function() {
+    Theme.loadCurrent();
+    $.localScroll();
+    $('.table :checkbox.toggle').each(function(i, toggle) {
+      $(toggle).change(function(e) {
+        $(toggle).parents('table:first').find(':checkbox:not(.toggle)').each(function(j, checkbox) {
+          checkbox.checked = !checkbox.checked;
+        })
+      });
+    });
+  });
+  // ]]>
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37045493-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>

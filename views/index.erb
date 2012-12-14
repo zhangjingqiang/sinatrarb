@@ -1,0 +1,29 @@
+<div class="block" id="block-text">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="active first"><a href="#block-text">Content</a></li>
+    </ul>
+  </div>
+  <div class="content">
+  	<% @content[:site_text].size.times do |i| %>
+    <h2 class="title"><a href="<%= @google + @content[:site_href][i] %>"><%= @content[:site_text][i] %></a></h2>
+    <div class="inner">
+      <p class="first">
+        <%= @content[:description][i] %>
+      </p>
+      <hr />
+    </div>
+    <% end %>
+    <div class="inner">
+      <div class="flash">
+      	<% type = ['error','warning','notice'] %>
+        <div class="message <%= type.sample %>">
+          <p>
+          	<%= link_to "More...", "#{@google_search}#{params[:s]}", :target => "_blank" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= partial(:'layout/footer') %>
